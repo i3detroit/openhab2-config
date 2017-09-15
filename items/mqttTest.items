@@ -1,19 +1,8 @@
+Group power
 
-Number ClassroomTemp "temp [%.1f]" {mqtt="<[mosquitto:test/temperature:state:default]"}
-
-
-
-Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/sonoff/STATE:state:JSONPATH($.Wifi.RSSI)]" }
-
-Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/sonoff/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
-
-Number sonoff_temp "sonoff: temp [%d %%]" (temp) { mqtt="<[mosquitto:tele/sonoff/SENSOR:state:JSONPATH($.DHT22.Temperature)]" }
-
-
-//Switch sonoff_power (power) { mqtt=">[mosquitto:cmnd/sonoff/power:command:*:default], <[mosquitto:stat/sonoff/POWER:state:default]" }
-//Switch outlet1_power (power) { mqtt=">[mosquitto:cmnd/outlet1/power:command:*:default], <[mosquitto:stat/outlet1/POWER:state:default]" }
-//Switch outlet2_power (power) { mqtt=">[mosquitto:cmnd/outlet2/power:command:*:default], <[mosquitto:stat/outlet2/POWER:state:default]" }
-//Switch outlet3_power (power) { mqtt=">[mosquitto:cmnd/outlet3/power:command:*:default], <[mosquitto:stat/outlet3/POWER:state:default]" }
+Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/trafficLight/STATE:state:JSONPATH($.Wifi.RSSI)]" }
+Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/trafficLight/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
+Number sonoff_temp "sonoff: temp [%d %%]" (temp) { mqtt="<[mosquitto:tele/trafficLight/SENSOR:state:JSONPATH($.DHT22.Temperature)]" }
 
 Switch	LightSwitchAll (power) { mqtt=">[mosquitto:cmnd/i3/commons/lights/all/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights001/POWER:state:default]" }
 Switch  LightSwitch001 (power) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights001/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights001/POWER:state:default]" }
