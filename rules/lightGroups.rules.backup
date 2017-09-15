@@ -1,0 +1,39 @@
+rule "Commons Lights"
+when
+	Item commonsLights changed
+then
+	if(commonsLights.state == OFF){
+                sendCommand(LightSwitch006,OFF)
+                sendCommand(LightSwitch007,OFF)
+                sendCommand(LightSwitch008,OFF)
+                sendCommand(LightSwitch010,OFF)
+                sendCommand(LightSwitch011,OFF)
+                sendCommand(LightSwitch012,OFF)
+		logInfo("Commons Lights turned OFF")
+	}else{
+                sendCommand(LightSwitch006,ON)
+                sendCommand(LightSwitch007,ON)
+                sendCommand(LightSwitch008,ON)
+                sendCommand(LightSwitch010,ON)
+                sendCommand(LightSwitch011,ON)
+                sendCommand(LightSwitch012,ON)
+                logInfo("Commons Lights turned ON")
+	}
+end
+
+rule "Tool Crib Lights"
+when
+	Item toolCribLights changed
+then
+	if(toolCribLights.state==OFF){
+                sendCommand(LightSwitch009,OFF)
+                sendCommand(LightSwitch013,OFF)
+        	sendCommand(LightSwitch014,OFF)
+	}else{
+		sendCommand(LightSwitch009,ON)
+                sendCommand(LightSwitch013,ON)
+                sendCommand(LightSwitch014,ON)
+	}
+end
+
+

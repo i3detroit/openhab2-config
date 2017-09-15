@@ -1,0 +1,13 @@
+rule "Fan on"
+when
+    Item FLV_Fan changed to ON
+then
+    sendCommand(display16seg,"FAB LAB FAN ON");
+end
+
+rule "Fan off"
+when
+    Item FLV_Fan changed to OFF
+then
+    sendCommand(display16seg,"FAB LAB FAN OFF");
+end

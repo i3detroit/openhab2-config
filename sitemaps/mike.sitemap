@@ -1,0 +1,5 @@
+sitemap default label="Mike's Test Sitemap"
+
+{
+	Switch item=LightSwitch001 label="Light 001"
+}

@@ -1,0 +1,48 @@
+val commonsLightsList = newArrayList(
+    LightSwitch006,
+    LightSwitch007,
+    LightSwitch008,
+    LightSwitch010,
+    LightSwitch011,
+    LightSwitch012
+    )
+
+val toolCribLightsList = newArrayList(
+    LightSwitch009,
+    LightSwitch013,
+    LightSwitch014
+    )
+
+rule "Commons Lights"
+when
+        Item commonsLights changed
+then
+        if(commonsLights.state == OFF){
+            for (light : commonsLightsList) {
+                sendCommand(light,OFF)
+            }
+            logInfo("Commons Lights turned OFF")
+        }else{
+                for (light : commonsLightsList) {
+                sendCommand(light,ON)
+            }
+            logInfo("Commons Lights turned ON")
+        }
+end
+
+rule "Tool Crib Lights"
+when
+        Item toolCribLights changed
+then
+        if(toolCribLights.state == OFF){
+                for (light : toolCribLightsList) {
+                sendCommand(light,OFF)
+            }
+            logInfo("Tool Crib Lights turned OFF")
+        }else{
+                for (light : toolCribLightsList) {
+                sendCommand(light,ON)
+            }
+            logInfo("Tool Crib Lights turned ON")
+        }
+end

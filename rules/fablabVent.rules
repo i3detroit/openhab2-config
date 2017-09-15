@@ -1,0 +1,25 @@
+// Fab Lab Ventilation Control Rules
+rule "fan state control"
+when
+	Item FLV_Request changed from OFF to ON
+then
+	if(FLV_Fan.state == OFF){
+		sendCommand(FLV_Fan,ON)
+		logInfo("FabLabVent","Turned on fan")
+	}else{
+		sendCommand(FLV_Fan,OFF)
+		logInfo("FabLabVent","Turned off fan")
+	}
+end
+
+rule "fan status indicator"
+when
+	Item FLV_Fan changed
+then
+
+	if(FLV_Fan.state == ON){
+		sendCommand(FLV_Status,ON)
+	}else{
+		sendCommand(FLV_Status,OFF)
+	}
+end

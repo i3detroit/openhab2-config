@@ -1,0 +1,17 @@
+rule "Traffic Signal Stop"
+when 
+    Time cron "0 0 0/1 1/1 * ? *"
+then
+    sendCommand(TrafficLightGreen,OFF)
+    sendCommand(TrafficLightRed,OFF)
+    sendCommand(TrafficLightYellow,OFF)
+    Thread::sleep(200)
+    sendCommand(TrafficLightGreen,ON)
+    Thread::sleep(28000)
+    sendCommand(TrafficLightGreen,OFF)
+    Thread::sleep(200)
+    sendCommand(TrafficLightYellow,ON)
+    Thread::sleep(1500)
+    sendCommand(TrafficLightYellow,OFF)
+    sendCommand(TrafficLightRed,ON)
+end
