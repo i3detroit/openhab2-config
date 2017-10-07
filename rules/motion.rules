@@ -1,12 +1,17 @@
 val quotesList = newArrayList(
 	"Target acquired",
 	"Is anyone there?",
-	"I see you")
+	"I see you",
+	"There you are",
+	"Activated",
+	"Who's there?",
+	"Please put me down",
+	"Are you still there")
 
 rule "Motion"
 
 when
         Item MachineShopMotion received update
 then
-        sendCommand(displayLEDmatrix,"^STarget acquired")
+        sendCommand(displayLEDmatrix,"^S"+quotesList.get((new java.util.Random).nextInt(7)))
 end
