@@ -1,6 +1,6 @@
 rule "Commons Lights"
 when
-    Item ShutDownButton received command DOWNSHUT
+    Item ShutDownButton received update DOWNSHUT
 then
     sendCommand(lights_main,OFF)
 end
