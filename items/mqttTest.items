@@ -56,4 +56,4 @@ Switch  DiscoBall (lights_main) { mqtt=">[mosquitto:cmnd/i3/commons/discoBall/PO
 
 String MachineShopMotion "Machine Shop Motion Sensor" { mqtt="<[mosquitto:stat/i3/inside/machineShop/motion-sensor/motion:state:default]" }
 
-Switch ShutDownButton "Shutdown button" { mqtt=">[mosquitto:cmnd/i3/openhab/shutdown:state:*:default]" }
+String ShutDownButton "Shutdown button" { mqtt=">[mosquitto:cmnd/i3/openhab/shutdown:state:*:default]" }
