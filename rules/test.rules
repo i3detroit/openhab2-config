@@ -1,0 +1,10 @@
+var String signString = virtualSignBuffer.state.toString
+
+rule "Sign"
+
+when
+	Item virtualSignBuffer changed
+then
+	var String signString = virtualSignBuffer.state.toString
+	sendCommand(displayLEDmatrix,"^P10^S"+signString+"^R")
+end

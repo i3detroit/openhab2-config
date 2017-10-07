@@ -1,0 +1,8 @@
+sitemap default label="Kevin's Test Sitemap"
+
+Frame label="Traffic Light Control"
+{
+	Switch item=TrafficLightRed label="Red"
+}
+
+Default item=display16seg

@@ -1,0 +1,12 @@
+val quotesList = newArrayList(
+	"Target acquired",
+	"Is anyone there?",
+	"I see you")
+
+rule "Motion"
+
+when
+        Item MachineShopMotion received update
+then
+        sendCommand(displayLEDmatrix,"^STarget acquired")
+end

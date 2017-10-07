@@ -28,3 +28,8 @@ Switch  TrafficLightYellow (power) { mqtt=">[mosquitto:cmnd/i3/commons/lights/tr
 Switch  TrafficLightGreen (power) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER3:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER3:state:default]" }
 
 String display16seg "16 Segment Display" { mqtt=">[mosquitto:cmnd/i3/commons/16seg/display:state:*:default]" }
+String displayLEDmatrix "LED Matrix Display" { mqtt=">[mosquitto:cmnd/i3/commons/ledMatrix/display:state:*:default]" }
+
+Switch  DiscoBall (power) { mqtt=">[mosquitto:cmnd/i3/commons/discoBall/POWER:command:*:default], <[mosquitto:stat/i3/commons/discoBall/POWER:state:default]" }
+
+String MachineShopMotion "Machine Shop Motion Sensor" { mqtt="<[mosquitto:stat/i3/inside/machineShop/motion-sensor/motion:state:default]" }
