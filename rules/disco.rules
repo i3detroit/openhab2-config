@@ -1,6 +1,0 @@
-rule "Disco fever"
-when
-	Item DiscoBall changed to ON
-then
-	sendCommand(displayLEDmatrix, "^=1^P19^SDISCO FEVER^R")
-end

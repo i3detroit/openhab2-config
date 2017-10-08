@@ -1,1 +1,6 @@
+// For passing in a string from an external source to show on a display
 String virtualSignBuffer "Virtual Sign Buffer"
+
+// Light "groups" referenced in rules - probably not useful to control things this way
+Switch commonsLights "Commons Lights"
+Switch toolCribLights "Tool Crib Lights"

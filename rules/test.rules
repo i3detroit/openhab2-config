@@ -8,3 +8,11 @@ then
 	var String signString = virtualSignBuffer.state.toString
 	sendCommand(displayLEDmatrix,"^P10^S"+signString+"^R")
 end
+
+
+rule "Disco fever"
+when
+	Item DiscoBall changed to ON
+then
+	sendCommand(displayLEDmatrix, "^=1^P19^SDISCO FEVER")
+end

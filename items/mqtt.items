@@ -1,0 +1,60 @@
+Group lights_all
+Group lights_east (lights_all)
+Group lights_emergency
+
+Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/trafficLight/STATE:state:JSONPATH($.Wifi.RSSI)]" }
+Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/trafficLight/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
+Number sonoff_temp "sonoff: temp [%d %%]" (temp) { mqtt="<[mosquitto:tele/trafficLight/SENSOR:state:JSONPATH($.DHT22.Temperature)]" }
+
+// East shop lights
+Switch  LightSwitch001 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights001/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights001/POWER:state:default]" }
+Switch  LightSwitch002 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights002/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights002/POWER:state:default]" }
+Switch  LightSwitch003 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights003/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights003/POWER:state:default]" }
+Switch  LightSwitch004 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights004/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights004/POWER:state:default]" }
+Switch  LightSwitch006 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights006/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights006/POWER:state:default]" }
+Switch  LightSwitch007 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights007/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights007/POWER:state:default]" }
+Switch  LightSwitch008 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights008/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights008/POWER:state:default]" }
+Switch  LightSwitch009 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights009/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights009/POWER:state:default]" }
+Switch  LightSwitch011 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights011/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights011/POWER:state:default]" }
+Switch  LightSwitch012 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights012/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights012/POWER:state:default]" }
+Switch  LightSwitch013 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights013/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights013/POWER:state:default]" }
+Switch  LightSwitch014 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights014/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights014/POWER:state:default]" }
+Switch  LightSwitch015 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights015/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights015/POWER:state:default]" }
+Switch  LightSwitch016 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights016/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights016/POWER:state:default]" }
+Switch  LightSwitch017 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights017/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights017/POWER:state:default]" }
+Switch  LightSwitch018 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights018/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights018/POWER:state:default]" }
+Switch  LightSwitch019 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights019/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights019/POWER:state:default]" }
+Switch  LightSwitch020 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights020/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights020/POWER:state:default]" }
+Switch  LightSwitch021 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights021/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights021/POWER:state:default]" }
+Switch  LightSwitch022 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights022/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights022/POWER:state:default]" }
+Switch  LightSwitch023 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights023/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights023/POWER:state:default]" }
+Switch  LightSwitch024 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights024/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights024/POWER:state:default]" }
+Switch  LightSwitch026 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights026/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights026/POWER:state:default]" }
+Switch  LightSwitch028 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights028/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights028/POWER:state:default]" }
+Switch  LightSwitch029 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights029/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights029/POWER:state:default]" }
+Switch  LightSwitch030 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights030/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights030/POWER:state:default]" }
+Switch  LightSwitch031 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights031/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights031/POWER:state:default]" }
+Switch  LightSwitch032 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights032/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights032/POWER:state:default]" }
+Switch  LightSwitch033 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights033/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights033/POWER:state:default]" }
+Switch  LightSwitch034 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights034/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights034/POWER:state:default]" }
+Switch  LightSwitch035 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights035/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights035/POWER:state:default]" }
+Switch  LightSwitch036 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights036/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights036/POWER:state:default]" }
+Switch  LightSwitch037 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights037/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights037/POWER:state:default]" }
+
+//Emergency lights
+Switch  LightSwitch005 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights005/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights005/POWER:state:default]" }
+Switch  LightSwitch010 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights010/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights010/POWER:state:default]" }
+Switch  LightSwitch025 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights025/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights025/POWER:state:default]" }
+Switch  LightSwitch027 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights027/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights027/POWER:state:default]" }
+
+Switch  TrafficLightRed (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER1:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER1:state:default]" }
+Switch  TrafficLightYellow (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER2:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER2:state:default]" }
+Switch  TrafficLightGreen (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER3:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER3:state:default]" }
+Switch  DiscoBall (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/discoBall/POWER:command:*:default], <[mosquitto:stat/i3/commons/discoBall/POWER:state:default]" }
+
+String display16seg "16 Segment Display" { mqtt=">[mosquitto:cmnd/i3/commons/16seg/display:state:*:default]" }
+String displayLEDmatrix "LED Matrix Display" { mqtt=">[mosquitto:cmnd/i3/commons/ledMatrix/display:state:*:default]" }
+
+String MachineShopMotion "Machine Shop Motion Sensor" { mqtt="<[mosquitto:stat/i3/inside/machineShop/motion-sensor/motion:state:default]" }
+
+String ShutDownButton "Shutdown button" { mqtt="<[mosquitto:cmnd/i3/openhab/shutdown:state:default]" }
