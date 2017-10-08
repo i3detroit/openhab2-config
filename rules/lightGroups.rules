@@ -4,6 +4,7 @@ when
     Item ShutDownButton received update DOWNSHUT
 then
     sendCommand(lights_east,OFF)
+    sendCommand(ceiling_fans,OFF)
 end
 
 // Dash button control for tool crib lights
