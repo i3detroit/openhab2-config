@@ -1,7 +1,6 @@
 var String signString = virtualSignBuffer.state.toString
 
-rule "Sign"
-
+rule "Display sign buffer"
 when
 	Item virtualSignBuffer changed
 then
@@ -15,4 +14,11 @@ when
 	Item DiscoBall changed to ON
 then
 	sendCommand(displayLEDmatrix, "^=1^P19^SDISCO FEVER")
+end
+
+rule "Someone's here"
+when
+	Item Doorbell changed to ding
+then
+	sendCommand(displayLEDmatrix, "^SSomeone's here")
 end

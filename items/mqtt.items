@@ -2,6 +2,7 @@ Group lights_all
 Group lights_east (lights_all)
 Group lights_emergency
 Group decor
+Group ceiling_fans
 
 Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/trafficLight/STATE:state:JSONPATH($.Wifi.RSSI)]" }
 Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/trafficLight/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
@@ -42,6 +43,11 @@ Switch  LightSwitch035 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/
 Switch  LightSwitch036 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights036/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights036/POWER:state:default]" }
 Switch  LightSwitch037 (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights037/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights037/POWER:state:default]" }
 
+// Ceiling Fans
+Switch CommonsCeilingFans (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/inside/commons/east-ceiling-fans/POWER:command:*:default], <[mosquitto:stat/i3/inside/commons/east-ceiling-fans/POWER:state:default]" }
+Switch LaserCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/laserZone/ceilingFan/POWER:command:*:default], <[mosquitto:stat/i3/i3/laserZone/ceilingFan/POWER:state:default]" }
+Switch MachineShopCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/machineShop/fans/ceilingFan/POWER:command:*:default], <[mosquitto:stat/i3/machineShop/fans/ceilingFan/POWER:state:default]" }
+
 //Emergency lights
 Switch  LightSwitch005 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights005/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights005/POWER:state:default]" }
 Switch  LightSwitch010 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights010/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights010/POWER:state:default]" }
@@ -56,6 +62,10 @@ Switch  DiscoBall (decor) { mqtt=">[mosquitto:cmnd/i3/commons/discoBall/POWER:co
 String display16seg "16 Segment Display" { mqtt=">[mosquitto:cmnd/i3/commons/16seg/display:state:*:default]" }
 String displayLEDmatrix "LED Matrix Display" { mqtt=">[mosquitto:cmnd/i3/commons/ledMatrix/display:state:*:default]" }
 
+// Sensors
 String MachineShopMotion "Machine Shop Motion Sensor" { mqtt="<[mosquitto:stat/i3/inside/machineShop/motion-sensor/motion:state:default]" }
+String GlassDoorLockSensor "Glass Door Lock Sensor" { mqtt="<[mosquitto:stat/i3/classroom/glassDoor/lock:state:default]" }
+String GarageDoorLockSensor "Garage Door Lock Sensor" { mqtt="<[mosquitto:stat/i3/inside/commons/garageDoor:state:default]" }
+String Doorbell "Doorbell" { mqtt="<[mosquitto:stat/i3/inside/commons/normal-doorbell:state:default]" }
 
 String ShutDownButton "Shutdown button" { mqtt="<[mosquitto:cmnd/i3/openhab/shutdown:state:default]" }
