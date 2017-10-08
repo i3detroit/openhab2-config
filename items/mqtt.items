@@ -1,6 +1,7 @@
 Group lights_all
 Group lights_east (lights_all)
 Group lights_emergency
+Group decor
 
 Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/trafficLight/STATE:state:JSONPATH($.Wifi.RSSI)]" }
 Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/trafficLight/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
@@ -47,10 +48,10 @@ Switch  LightSwitch010 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/commons/li
 Switch  LightSwitch025 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights025/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights025/POWER:state:default]" }
 Switch  LightSwitch027 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights027/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights027/POWER:state:default]" }
 
-Switch  TrafficLightRed (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER1:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER1:state:default]" }
-Switch  TrafficLightYellow (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER2:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER2:state:default]" }
-Switch  TrafficLightGreen (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER3:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER3:state:default]" }
-Switch  DiscoBall (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/discoBall/POWER:command:*:default], <[mosquitto:stat/i3/commons/discoBall/POWER:state:default]" }
+Switch  TrafficLightRed (decor) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER1:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER1:state:default]" }
+Switch  TrafficLightYellow (decor) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER2:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER2:state:default]" }
+Switch  TrafficLightGreen (decor) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER3:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER3:state:default]" }
+Switch  DiscoBall (decor) { mqtt=">[mosquitto:cmnd/i3/commons/discoBall/POWER:command:*:default], <[mosquitto:stat/i3/commons/discoBall/POWER:state:default]" }
 
 String display16seg "16 Segment Display" { mqtt=">[mosquitto:cmnd/i3/commons/16seg/display:state:*:default]" }
 String displayLEDmatrix "LED Matrix Display" { mqtt=">[mosquitto:cmnd/i3/commons/ledMatrix/display:state:*:default]" }
