@@ -6,7 +6,9 @@ Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/traffi
 Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/trafficLight/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
 Number sonoff_temp "sonoff: temp [%d %%]" (temp) { mqtt="<[mosquitto:tele/trafficLight/SENSOR:state:JSONPATH($.DHT22.Temperature)]" }
 
-Switch	LightSwitchAll (lights_main) { mqtt=">[mosquitto:cmnd/i3/commons/lights/all/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights001/POWER:state:default]" }
+//probably don't use this one, use groups instead
+//Switch  LightSwitchAll { mqtt=">[mosquitto:cmnd/i3/commons/lights/all/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights001/POWER:state:default]" }
+
 Switch  LightSwitch001 (lights_main) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights001/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights001/POWER:state:default]" }
 Switch  LightSwitch002 (lights_main) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights002/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights002/POWER:state:default]" }
 Switch  LightSwitch003 (lights_main) { mqtt=">[mosquitto:cmnd/i3/commons/lights/scuzzLights003/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/scuzzLights003/POWER:state:default]" }
