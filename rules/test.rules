@@ -18,7 +18,7 @@ end
 
 rule "Someone's here"
 when
-	Item Doorbell changed to ding
+	Item Doorbell changed to ^G
 then
 	sendCommand(displayLEDmatrix, "^SSomeone's here")
 end
