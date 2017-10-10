@@ -18,7 +18,7 @@ end
 
 rule "Someone's here"
 when
-	Item Doorbell received update ding
+	Item Doorbell received update
 then
 	sendCommand(displayLEDmatrix, "^SSomeone's here")
 end
