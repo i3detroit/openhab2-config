@@ -1,18 +1,23 @@
 val quotesList = newArrayList(
-	"Target acquired",
-	"Is anyone there?",
-	"I see you",
-	"There you are",
-	"Activated",
-	"Who's there?",
-	"Please put me down",
-	"Are you still there")
+	"TARGET ACQUIRED",
+	"IS ANYONE THERE?",
+	"I SEE YOU",
+	"THERE YOU ARE",
+	"ACTIVATED",
+	"WHO'S THERE?",
+	"PLEASE PUT ME DOWN",
+	"ARE YOU STILL THERE?")
 
-rule "Motion"
+rule "Motion detected"
 
 when
         Item MachineShopMotion received update
 then
-        sendCommand(displayLEDmatrix,"^S"+quotesList.get((new java.util.Random).nextInt(7)))
-        Thread::sleep(5000)
+		sendCommand(machineShopLights,ON)
+        sendCommand(display16seg,quotesList.get((new java.util.Random).nextInt(7)))
+        Thread::sleep(10000)
+        sendCommand(FLV_Fan, " ")
 end
+
+
+		

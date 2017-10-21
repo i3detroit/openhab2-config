@@ -18,3 +18,29 @@ rule "Tool Crib Dash button pressed"
         sendCommand(toolCribLights,OFF)
     }
 end
+
+rule "Machine Shop Lights Switch OFF"
+when
+    Item machineShopLights changed to OFF
+then
+    sendCommand(LightSwitch029,OFF)
+    sendCommand(LightSwitch030,OFF)
+    sendCommand(LightSwitch031,OFF)
+    sendCommand(LightSwitch032,OFF)
+    sendCommand(LightSwitch033,OFF)
+    sendCommand(LightSwitch034,OFF)
+    sendCommand(LightSwitch035,OFF)
+end
+
+rule "Machine Shop Lights Switch ON"
+when
+    Item machineShopLights changed to ON
+then
+    sendCommand(LightSwitch029,ON)
+    sendCommand(LightSwitch030,ON)
+    sendCommand(LightSwitch031,ON)
+    sendCommand(LightSwitch032,ON)
+    sendCommand(LightSwitch033,ON)
+    sendCommand(LightSwitch034,ON)
+    sendCommand(LightSwitch035,ON)
+end

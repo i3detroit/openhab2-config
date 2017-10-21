@@ -2,5 +2,7 @@
 String virtualSignBuffer "Virtual Sign Buffer"
 
 // Light "groups" referenced in rules - probably not useful to control things this way
-Switch commonsLights "Commons Lights"
+
 Switch toolCribLights "Tool Crib Lights"
+
+Switch machineShopLights "Machine Shop Lights" { expire="1h,command=OFF" }
