@@ -13,11 +13,8 @@ rule "Motion detected"
 when
         Item MachineShopMotion received update
 then
-		sendCommand(machineShopLights,ON)
+	sendCommand(machineShopLights,ON)
         sendCommand(display16seg,quotesList.get((new java.util.Random).nextInt(7)))
         Thread::sleep(10000)
-        sendCommand(FLV_Fan, " ")
+        sendCommand(display16seg,"FAB LAB FAN "+FLV_Fan.state.toString)
 end
-
-
-		
