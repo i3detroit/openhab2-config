@@ -24,16 +24,9 @@ then
 	}
 end
 
-rule "Fan on"
+rule "Fan status display"
 when
-    Item FLV_Fan changed to ON
+    Item FLV_Fan received update
 then
-    sendCommand(display16seg,"FAB LAB FAN ON");
-end
-
-rule "Fan off"
-when
-    Item FLV_Fan changed to OFF
-then
-    sendCommand(display16seg,"FAB LAB FAN OFF");
+    sendCommand(display16seg,"FAB LAB FAN "+FLV_Fan.state.toString)
 end
