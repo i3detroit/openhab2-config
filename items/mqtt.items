@@ -66,6 +66,7 @@ Switch  TrafficLightYellow (decor) { mqtt=">[mosquitto:cmnd/i3/commons/lights/tr
 Switch  TrafficLightGreen (decor) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER3:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER3:state:default]" }
 Switch  DiscoBall (decor) { mqtt=">[mosquitto:cmnd/i3/commons/discoBall/POWER:command:*:default], <[mosquitto:stat/i3/commons/discoBall/POWER:state:default]" }
 Switch  SnappleMachineLight (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/snappleVending/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/snappleVending/POWER:state:default]" }
+Switch  ClassroomSign { mqtt=">[mosquitto:cmnd/i3/inside/classroom/sign/POWER:command:*:default], <[mosquitto:stat/i3/inside/classroom/sign/POWER:state:default]" }
 
 String display16seg "16 Segment Display" { mqtt=">[mosquitto:cmnd/i3/commons/16seg/display:state:*:default]" }
 String displayLEDmatrix "LED Matrix Display" { mqtt=">[mosquitto:cmnd/i3/commons/ledMatrix/display:state:*:default]" }
