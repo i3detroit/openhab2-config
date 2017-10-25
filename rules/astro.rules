@@ -1,0 +1,13 @@
+rule "Sunset - Turn sign ON"
+when
+	Channel 'astro:sun:home:set#event' triggered START
+then
+	sendCommand(ClassroomSign,ON)
+end
+
+rule "Sunrise - Turn sign OFF"
+when
+	Channel 'astro:sun:home:rise#event' triggered START
+then
+	sendCommand(ClassroomSign,OFF)
+end
