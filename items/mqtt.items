@@ -2,7 +2,9 @@ Group lights_all
 Group lights_east (lights_all)
 Group lights_emergency
 Group decor
-Group ceiling_fans
+Group fans
+Group ceiling_fans (fans)
+Group equip_exhaust (fans)
 
 Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/trafficLight/STATE:state:JSONPATH($.Wifi.RSSI)]" }
 Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/trafficLight/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
@@ -50,7 +52,7 @@ Switch LaserCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/laserZone/ceil
 Switch MachineShopCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/machineShop/fans/ceilingFan/POWER:command:*:default], <[mosquitto:stat/i3/machineShop/fans/ceilingFan/POWER:state:default]" }
 
 // Exhaust Fans
-Switch LaserZoneExhaustFan { mqtt=">[mosquitto:cmnd/i3/laserZone/ventFan/POWER:command:*:default], <[mosquitto:stat/i3/laserZone/ventFan/POWER:state:default]" }
+Switch LaserZoneExhaustFan (equip_exhaust) { mqtt=">[mosquitto:cmnd/i3/laserZone/ventFan/POWER:command:*:default], <[mosquitto:stat/i3/laserZone/ventFan/POWER:state:default]" }
 
 // Emergency lights
 Switch  LightSwitch005 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/inside/lights/005/POWER:command:*:default], <[mosquitto:stat/i3/inside/lights/005/POWER:state:default]" }
@@ -64,7 +66,6 @@ Switch  TrafficLightYellow (decor) { mqtt=">[mosquitto:cmnd/i3/commons/lights/tr
 Switch  TrafficLightGreen (decor) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER3:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER3:state:default]" }
 Switch  DiscoBall (decor) { mqtt=">[mosquitto:cmnd/i3/commons/discoBall/POWER:command:*:default], <[mosquitto:stat/i3/commons/discoBall/POWER:state:default]" }
 Switch  SnappleMachineLight (lights_east) { mqtt=">[mosquitto:cmnd/i3/commons/lights/snappleVending/POWER:command:*:default], <[mosquitto:stat/i3/commons/lights/snappleVending/POWER:state:default]" }
-
 
 String display16seg "16 Segment Display" { mqtt=">[mosquitto:cmnd/i3/commons/16seg/display:state:*:default]" }
 String displayLEDmatrix "LED Matrix Display" { mqtt=">[mosquitto:cmnd/i3/commons/ledMatrix/display:state:*:default]" }
