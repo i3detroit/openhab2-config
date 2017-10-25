@@ -5,6 +5,7 @@ Group decor
 Group fans
 Group ceiling_fans (fans)
 Group equip_exhaust (fans)
+Group equipment
 
 Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/trafficLight/STATE:state:JSONPATH($.Wifi.RSSI)]" }
 Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/trafficLight/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
@@ -59,6 +60,9 @@ Switch  LightSwitch005 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/inside/lig
 Switch  LightSwitch010 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/inside/lights/010/POWER:command:*:default], <[mosquitto:stat/i3/inside/lights/010/POWER:state:default]" }
 Switch  LightSwitch025 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/inside/lights/025/POWER:command:*:default], <[mosquitto:stat/i3/inside/lights/025/POWER:state:default]" }
 Switch  LightSwitch027 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/inside/lights/027/POWER:command:*:default], <[mosquitto:stat/i3/inside/lights/027/POWER:state:default]" }
+
+// Equipment
+Switch AirCompressor (equipment) { mqtt=">[mosquitto:cmnd/i3/inside/machineShop/air-compressor/POWER:command:*:default], <[mosquitto:stat/i3/inside/machineShop/air-compressor/POWER:state:default]" }
 
 // MISC
 Switch  TrafficLightRed (decor) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER1:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER1:state:default]" }
