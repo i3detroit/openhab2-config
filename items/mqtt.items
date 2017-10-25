@@ -74,6 +74,7 @@ String displayLEDmatrix "LED Matrix Display" { mqtt=">[mosquitto:cmnd/i3/commons
 // Sensors
 String MachineShopMotion "Machine Shop Motion Sensor" { mqtt="<[mosquitto:stat/i3/inside/machineShop/motion-sensor/motion:state:default]"}
 String GlassDoorLockSensor "Glass Door Lock Sensor" { mqtt="<[mosquitto:stat/i3/classroom/glassDoor/lock:state:default]" }
+String GlassDoorOpenSensor "GLass Door Open Sensor" { mqtt="<[mosquitto:stat/i3/classroom/glassDoor/open:state:default]" }
 String GarageDoorLockSensor "Garage Door Lock Sensor" { mqtt="<[mosquitto:stat/i3/inside/commons/garageDoor:state:default]" }
 String Doorbell "Doorbell" { mqtt="<[mosquitto:stat/i3/inside/commons/normal-doorbell:state:default]" }
 
