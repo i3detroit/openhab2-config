@@ -1,0 +1,11 @@
+Strategies {
+    everyMinute : "0 * * * * ?"
+    everyHour   : "0 0 * * * ?"
+    everyDay    : "0 0 0 * * ?"
+}
+
+Items {
+    openEvseAmp, openEvseWh : strategy = everyChange
+    LaserZoneExhaustFan : strategy = everyChange
+    sonoff_temp, sonoff_humid : strategy = everyChange
+}
