@@ -6,7 +6,7 @@ Strategies {
 
 Items {
     openEvseAmp, openEvseWh : strategy = everyChange, everyHour
-    LaserZoneExhaustFan, FLV_Fan, AirCompressor : strategy = everyChange, everyHour
+    AirCompressor, AirCompressorValve : strategy = everyChange, everyHour
     sonoff_temp, sonoff_humid : strategy = everyChange, everyHour
-    lights_east* : strategy = everyChange, everyHour
+    lights_east*, lights_emergency*, fans*, ClassroomSign, DiscoBall : strategy = everyChange, everyHour
 }
