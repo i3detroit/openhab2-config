@@ -63,6 +63,7 @@ Switch  LightSwitch027 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/inside/lig
 
 // Equipment
 Switch AirCompressor (equipment) { mqtt=">[mosquitto:cmnd/i3/inside/machineShop/air-compressor/POWER:command:*:default], <[mosquitto:stat/i3/inside/machineShop/air-compressor/POWER:state:default]" }
+Switch AirCompressorValve { mqtt=">[mosquitto:cmnd/i3/inside/infrastructure/compressor-valve/POWER:command:*:default], <[mosquitto:stat/i3/inside/infrastructure/compressor-valve/POWER:state:default]" }
 
 // MISC
 Switch  TrafficLightRed (decor) { mqtt=">[mosquitto:cmnd/i3/commons/lights/trafficLight/POWER1:command:*:default], <[mosquitto:stat/i3/commons/lights/trafficLight/POWER1:state:default]" }
