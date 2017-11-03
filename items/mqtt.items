@@ -84,4 +84,4 @@ String Doorbell "Doorbell" { mqtt="<[mosquitto:stat/i3/inside/commons/normal-doo
 Number openEvseAmp "openEVSE Amps" { mqtt="<[mosquitto:tele/i3/inside/commons/openevse/amp:state:default]" }
 Number openEvseWh "openEVSE WH" { mqtt="<[mosquitto:tele/i3/inside/commons/openevse/wh:state:default]" }
 
-String ShutDownButton "Shutdown button" { mqtt="<[mosquitto:cmnd/i3/openhab/shutdown:state:default]" }
+String ShutDownButton "Shutdown button" { mqtt="<[mosquitto:cmnd/i3/automation/shutdown:state:default]" }
