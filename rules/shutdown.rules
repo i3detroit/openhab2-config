@@ -7,4 +7,5 @@ then
     sendCommand(ceiling_fans,OFF)
     sendCommand(AirCompressor,OFF)
     sendCommand(fans,OFF)
+    sendCommand(DiscoBall,OFF)
 end
