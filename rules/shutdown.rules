@@ -3,6 +3,7 @@ rule "Shutdown all the things"
 when
     Item ShutDownButton received update DOWNSHUT
 then
+    sendCommand(lights_emergency,ON)
     sendCommand(lights_east,OFF)
     sendCommand(ceiling_fans,OFF)
     sendCommand(AirCompressor,OFF)
