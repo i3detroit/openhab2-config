@@ -35,3 +35,10 @@ then
     sendCommand(LightSwitch034,ON)
     sendCommand(LightSwitch035,ON)
 end
+
+rule "Noon emergency reset"
+when
+    Time cron "0 0 12 1/1 * ? *"
+then
+    sendCommand(lights_emergency,ON)
+end
