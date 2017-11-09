@@ -1,0 +1,13 @@
+rule "Air Compressor Valve ON"
+when
+    Item AirCompressor changed from OFF to ON
+then
+    sendCommand(AirCompressorValve,ON)
+end
+
+rule "Air Compressor Valve OFF"
+when
+    Item AirCompressor changed from ON to OFF
+then
+    sendCommand(AirCompressorValve,OFF)
+end
