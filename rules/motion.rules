@@ -14,6 +14,7 @@ when
         Item MachineShopMotion received update
 then
 	sendCommand(machineShopLights,ON)
+	sendCommand(display16segDelay,1000)
         sendCommand(display16seg,quotesList.get((new java.util.Random).nextInt(7)))
         Thread::sleep(10000)
         sendCommand(display16seg,"FAB LAB FAN "+FLV_Fan.state.toString)
