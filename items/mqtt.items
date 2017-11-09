@@ -7,9 +7,9 @@ Group ceiling_fans (fans)
 Group equip_exhaust (fans)
 Group equipment
 
-Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/i3/inside/commons/lights/traffic-light/STATE:state:JSONPATH($.Wifi.RSSI)]" }
-Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/i3/inside/commons/lights/traffic-light/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
-Number sonoff_temp "sonoff: temp [%d %%]" (temp) { mqtt="<[mosquitto:tele/i3/inside/commons/lights/traffic-light/SENSOR:state:JSONPATH($.DHT22.Temperature)]" }
+Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/i3/inside/commons/traffic-light/STATE:state:JSONPATH($.Wifi.RSSI)]" }
+Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/i3/inside/commons/traffic-light/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
+Number sonoff_temp "sonoff: temp [%d %%]" (temp) { mqtt="<[mosquitto:tele/i3/inside/commons/traffic-light/SENSOR:state:JSONPATH($.DHT22.Temperature)]" }
 
 // East shop lights
 Switch  LightSwitch001 (lights_east) { mqtt=">[mosquitto:cmnd/i3/inside/lights/001/POWER:command:*:default], <[mosquitto:stat/i3/inside/lights/001/POWER:state:default]" }
