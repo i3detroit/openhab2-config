@@ -9,6 +9,7 @@ Group exhaust (fans)
 Group equipment
 Group openEvse
 Group RSSI
+Group AP
 Group temp
 Group humid
 
