@@ -1,15 +1,3 @@
-// Dash button control for tool crib lights
-rule "Tool Crib Dash button pressed"
-    when
-        Channel "amazondashbutton:dashbutton:50-f5-da-11-a3-fd:press" triggered
-    then
-    if(toolCribLights.state == OFF){
-        sendCommand(toolCribLights,ON)
-    }else{
-        sendCommand(toolCribLights,OFF)
-    }
-end
-
 rule "Machine Shop Lights Switch OFF"
 when
     Item machineShopLights changed to OFF
