@@ -4,5 +4,3 @@
 //Switch FLV_Request "Fab Lab Vent Fan Request Button" (ALL) {modbus="adam6060_3_di:5"}
 
 //Switch FLV_Status "Fab Lab Vent Fan Status Indicator" (ALL) {modbus="adam6060_3_do:5"}
-
-Switch FLV_Fan "Fab Lab Vent Fan Control Output" (ALL) {mqtt=">[mosquitto:cmnd/i3/inside/fablab/vent/power:command:*:default], <[mosquitto:stat/i3/inside/fablab/vent/POWER:state:default]" }
