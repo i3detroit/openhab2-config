@@ -5,7 +5,9 @@ Group decor
 Group fans
 Group ceiling_fans (fans)
 Group equip_exhaust (fans)
+Group exhaust (fans)
 Group equipment
+Group openEvse
 
 Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/i3/inside/commons/traffic-light/STATE:state:JSONPATH($.Wifi.RSSI)]" }
 Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/i3/inside/commons/traffic-light/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
@@ -51,10 +53,14 @@ Switch  LightSwitchMediaLab (lights_east) { mqtt=">[mosquitto:cmnd/i3/inside/med
 // Ceiling Fans
 Switch CommonsCeilingFans (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/inside/commons/east-ceiling-fans/POWER:command:*:default], <[mosquitto:stat/i3/inside/commons/east-ceiling-fans/POWER:state:default]" }
 Switch LaserCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/laserZone/ceilingFan/POWER:command:*:default], <[mosquitto:stat/i3/i3/laserZone/ceilingFan/POWER:state:default]" }
-Switch MachineShopCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/machine-shop/fans/ceiling-fan/POWER:command:*:default], <[mosquitto:stat/i3/machine-shop/fans/ceiling-fan/POWER:state:default]" }
+Switch MachineShopCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/inside/machine-shop/ceiling-fan/POWER:command:*:default], <[mosquitto:stat/i3/inside/machine-shop/ceiling-fan/POWER:state:default]" }
 
 // Exhaust Fans
 Switch LaserZoneExhaustFan (equip_exhaust) { mqtt=">[mosquitto:cmnd/i3/laserZone/ventFan/POWER:command:*:default], <[mosquitto:stat/i3/laserZone/ventFan/POWER:state:default]" }
+Switch FLV_Fan (equip_exhaust) {mqtt=">[mosquitto:cmnd/i3/inside/fablab/vent/power:command:*:default], <[mosquitto:stat/i3/inside/fablab/vent/POWER:state:default]" }
+
+Switch CNCCeilingExhaust (exhaust) { mqtt=">[mosquitto:cmnd/i3/inside/cnc/vent/POWER:command:*:default], <[mosquitto:stat/i3/inside/cnc/vent/POWER:state:default]" }
+Switch SouthCeilingExhaust (exhaust) { mqtt=">[mosquitto:cmnd/i3/inside/commons/south-vent/POWER:command:*:default], <[mosquitto:stat/i3/inside/commons/south-vent/POWER:state:default]" }
 
 // Emergency lights
 Switch  LightSwitch005 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/inside/lights/005/POWER:command:*:default], <[mosquitto:stat/i3/inside/lights/005/POWER:state:default]" }
@@ -70,7 +76,7 @@ Switch AirCompressorValve { mqtt=">[mosquitto:cmnd/i3/inside/infrastructure/comp
 Switch  TrafficLightRed (decor) { mqtt=">[mosquitto:cmnd/i3/inside/commons/traffic-light/POWER1:command:*:default], <[mosquitto:stat/i3/inside/commons/traffic-light/POWER1:state:default]" }
 Switch  TrafficLightYellow (decor) { mqtt=">[mosquitto:cmnd/i3/inside/commons/traffic-light/POWER2:command:*:default], <[mosquitto:stat/i3/inside/commons/traffic-light/POWER2:state:default]" }
 Switch  TrafficLightGreen (decor) { mqtt=">[mosquitto:cmnd/i3/inside/commons/traffic-light/POWER3:command:*:default], <[mosquitto:stat/i3/inside/commons/traffic-light/POWER3:state:default]" }
-Switch  DiscoBall (decor) { mqtt=">[mosquitto:cmnd/i3/commons/discoBall/POWER:command:*:default], <[mosquitto:stat/i3/commons/discoBall/POWER:state:default]" }
+Switch  DiscoBall (decor) { mqtt=">[mosquitto:cmnd/i3/inside/commons/disco/POWER:command:*:default], <[mosquitto:stat/i3/inside/commons/disco/POWER:state:default]" }
 Switch  SnappleMachineLight (decor) { mqtt=">[mosquitto:cmnd/i3/inside/commons/snapple-vending-light/POWER:command:*:default], <[mosquitto:stat/i3/inside/commons/snapple-vending-light/POWER:state:default]" }
 Switch  ClassroomSign { mqtt=">[mosquitto:cmnd/i3/inside/classroom/sign/POWER:command:*:default], <[mosquitto:stat/i3/inside/classroom/sign/POWER:state:default]" }
 
@@ -84,7 +90,8 @@ String GlassDoorLockSensor "Glass Door Lock Sensor" { mqtt="<[mosquitto:stat/i3/
 String GlassDoorOpenSensor "GLass Door Open Sensor" { mqtt="<[mosquitto:stat/i3/classroom/glassDoor/open:state:default]" }
 String GarageDoorLockSensor "Garage Door Lock Sensor" { mqtt="<[mosquitto:stat/i3/inside/commons/garageDoor:state:default]" }
 String Doorbell "Doorbell" { mqtt="<[mosquitto:stat/i3/inside/commons/normal-doorbell:state:default]" }
-Number openEvseAmp "openEVSE Amps" { mqtt="<[mosquitto:tele/i3/inside/commons/openevse/amp:state:default]" }
-Number openEvseWh "openEVSE WH" { mqtt="<[mosquitto:tele/i3/inside/commons/openevse/wh:state:default]" }
+Number openEvseAmp (openEvse) { mqtt="<[mosquitto:tele/i3/inside/commons/openevse/amp:state:default]" }
+Number openEvseWh (openEvse) { mqtt="<[mosquitto:tele/i3/inside/commons/openevse/wh:state:default]" }
+Number openEvseState (openEvse) { mqtt="<[mosquitto:tele/i3/inside/commons/openevse/state:state:default]" }
 
 String ShutDownButton "Shutdown button" { mqtt="<[mosquitto:cmnd/i3/automation/shutdown:state:default]" }
