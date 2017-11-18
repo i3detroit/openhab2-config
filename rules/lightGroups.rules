@@ -30,3 +30,20 @@ when
 then
     sendCommand(lights_emergency,ON)
 end
+
+rule "Chandelier Disco ON"
+when
+    Item DiscoBall changed to ON
+then
+    sendCommand(Chandelier01,ON)
+    sendCommand(Chandelier02,ON)
+end
+
+rule "Chandelier Disco ON"
+when
+    Item DiscoBall changed to OFF
+then
+    sendCommand(Chandelier01,OFF)
+    sendCommand(Chandelier02,OFF)
+end
+
