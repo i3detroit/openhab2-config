@@ -1,7 +1,7 @@
 // Shutdown button
 rule "Shutdown all the things"
 when
-    Item ShutDownButton received update DOWNSHUT
+//    Item ShutDownButton received update DOWNSHUT
 then
     sendCommand(lights_emergency,ON)
     sendCommand(lights_east,OFF)
