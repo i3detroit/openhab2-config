@@ -12,10 +12,15 @@ Group RSSI
 Group AP
 Group temp
 Group humid
+Group LWT
 
 Number sonoff_RSSI "sonoff: RSSI [%d %%]" (RSSI) { mqtt="<[mosquitto:tele/i3/inside/commons/traffic-light/STATE:state:JSONPATH($.Wifi.RSSI)]" }
 Number sonoff_humid "sonoff: humid [%d %%]" (humid) { mqtt="<[mosquitto:tele/i3/inside/commons/traffic-light/SENSOR:state:JSONPATH($.DHT22.Humidity)]" }
 Number sonoff_temp "sonoff: temp [%d %%]" (temp) { mqtt="<[mosquitto:tele/i3/inside/commons/traffic-light/SENSOR:state:JSONPATH($.DHT22.Temperature)]" }
+
+Number portable_temp (temp) { mqtt="<[mosquitto:stat/i3/inside/portable-temp/temp:state:default]" }
+String portable_temp_LWT (LWT) { mqtt="<[mosquitto:tele/i3/inside/portable-temp/LWT:state:default]" }
+
 
 // East shop lights
 Switch  LightSwitch001 (lights_east) { mqtt=">[mosquitto:cmnd/i3/inside/lights/001/POWER:command:*:default], <[mosquitto:stat/i3/inside/lights/001/POWER:state:default]" }
@@ -83,6 +88,9 @@ Switch  TrafficLightGreen (decor) { mqtt=">[mosquitto:cmnd/i3/inside/commons/tra
 Switch  DiscoBall (decor) { mqtt=">[mosquitto:cmnd/i3/inside/commons/disco/POWER:command:*:default], <[mosquitto:stat/i3/inside/commons/disco/POWER:state:default]" }
 Switch  SnappleMachineLight (decor) { mqtt=">[mosquitto:cmnd/i3/inside/commons/snapple-vending-light/POWER:command:*:default], <[mosquitto:stat/i3/inside/commons/snapple-vending-light/POWER:state:default]" }
 Switch  ClassroomSign { mqtt=">[mosquitto:cmnd/i3/inside/classroom/sign/POWER:command:*:default], <[mosquitto:stat/i3/inside/classroom/sign/POWER:state:default]" }
+
+Switch  Chandelier01 (decor) { mqtt=">[mosquitto:cmnd/i3/inside/accent/chandelier-01/POWER:command:*:default], <[mosquitto:stat/i3/inside/accent/chandelier-01/POWER:state:default]" }
+Switch  Chandelier02 (decor) { mqtt=">[mosquitto:cmnd/i3/inside/accent/chandelier-02/POWER:command:*:default], <[mosquitto:stat/i3/inside/accent/chandelier-02/POWER:state:default]" }
 
 String display16seg "16 Segment Display" { mqtt=">[mosquitto:cmnd/i3/commons/16seg/display:state:*:default]" }
 String display16segDelay "16 Segment Display" { mqtt=">[mosquitto:cmnd/i3/commons/16seg/delay:state:*:default]" }
