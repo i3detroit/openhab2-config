@@ -67,7 +67,7 @@ Switch  LightSwitch027 (lights_emergency) { mqtt=">[mosquitto:cmnd/i3/inside/lig
 
 // Ceiling Fans
 Switch CommonsCeilingFans (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/inside/commons/east-ceiling-fans/POWER:command:*:default], <[mosquitto:stat/i3/inside/commons/east-ceiling-fans/POWER:state:default]" }
-Switch LaserCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/laserZone/ceilingFan/POWER:command:*:default], <[mosquitto:stat/i3/i3/laserZone/ceilingFan/POWER:state:default]" }
+Switch LaserCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/inside/laser-zone/ceiling-fan/POWER:command:*:default], <[mosquitto:stat/i3/inside/laser-zone/ceiling-fan/POWER:state:default]" }
 Switch MachineShopCeilingFan (ceiling_fans) { mqtt=">[mosquitto:cmnd/i3/inside/machine-shop/ceiling-fan/POWER:command:*:default], <[mosquitto:stat/i3/inside/machine-shop/ceiling-fan/POWER:state:default]" }
 
 // Exhaust Fans
